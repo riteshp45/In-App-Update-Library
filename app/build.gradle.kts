@@ -47,4 +47,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(project(":In-App Update Library"))
+//    implementation("com.github.riteshp45:In-App-Update-Library:1.0.0")
 }

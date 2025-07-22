@@ -14,22 +14,20 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/ic_app_update"
-            android:backgroundTint="@color/colorPrimary"/>
+            android:id="@+id/updateIconImage"
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_30"
+            android:layout_gravity="center_vertical" />
 
         <TextView
             android:id="@+id/updateText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:maxLines="1"
-            android:ellipsize="end"
-            android:layout_marginHorizontal="@dimen/margin_4"
             android:layout_gravity="center_vertical"
-            android:text="@string/app_downloading_state"
+            android:layout_marginHorizontal="@dimen/margin_4"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:textColor="#000"
             android:textSize="16sp" />
 
@@ -37,27 +35,27 @@
             android:id="@+id/updateIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/margin_6"
-            android:layout_gravity="center_vertical">
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/margin_6">
 
             <RelativeLayout
                 android:id="@+id/restart_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:paddingHorizontal="@dimen/margin_16"
-                android:paddingVertical="@dimen/margin_4"
                 android:background="@drawable/bg_rounded_white"
                 android:backgroundTint="@color/colorPrimary"
+                android:paddingHorizontal="@dimen/margin_16"
+                android:paddingVertical="@dimen/margin_4"
                 android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="Restart"
+                    android:text="@string/restart"
                     android:textColor="@color/white"
-                    android:textSize="12sp"
+                    android:textSize="@dimen/text_size_12"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -66,10 +64,8 @@
                 android:id="@+id/circularProgressBar"
                 android:layout_width="34dp"
                 android:layout_height="34dp"
-                android:visibility="visible"
-                android:layout_centerInParent="true"/>
-
-
+                android:layout_centerInParent="true"
+                android:visibility="visible" />
 
         </RelativeLayout>
 
