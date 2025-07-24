@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         appUpdateLayoutHelper.configureProgressBar(
             com.example.in_appupdatelibrary.R.drawable.ic_app_update,
-            "Please update your App",
+            "Update Available – Don’t Miss Out!",
             ContextCompat.getColor(this, com.example.in_appupdatelibrary.R.color.colorPrimary),
             ContextCompat.getColor(this, com.example.in_appupdatelibrary.R.color.colorAccent),
             26f,

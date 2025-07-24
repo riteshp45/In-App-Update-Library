@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/updateIconImage"
-            android:layout_width="@dimen/margin_30"
-            android:layout_height="@dimen/margin_30"
+            android:layout_width="@dimen/margin_24"
+            android:layout_height="@dimen/margin_24"
             android:layout_gravity="center_vertical" />
 
         <TextView
@@ -27,8 +27,9 @@
             android:layout_marginHorizontal="@dimen/margin_4"
             android:layout_weight="1"
             android:ellipsize="end"
-            android:maxLines="1"
-            android:textColor="#000"
+            android:maxLines="2"
+            android:text="Upgrade your app for a smoother experience"
+            android:textColor="@color/black"
             android:textSize="16sp" />
 
         <RelativeLayout
@@ -45,8 +46,8 @@
                 android:layout_centerInParent="true"
                 android:background="@drawable/bg_rounded_white"
                 android:backgroundTint="@color/colorPrimary"
-                android:paddingHorizontal="@dimen/margin_16"
-                android:paddingVertical="@dimen/margin_4"
+                android:paddingHorizontal="@dimen/margin_20"
+                android:paddingVertical="@dimen/margin_8"
                 android:visibility="gone">
 
                 <TextView
@@ -64,8 +65,7 @@
                 android:id="@+id/circularProgressBar"
                 android:layout_width="34dp"
                 android:layout_height="34dp"
-                android:layout_centerInParent="true"
-                android:visibility="visible" />
+                android:layout_centerInParent="true" />
 
         </RelativeLayout>
 
