@@ -30,7 +30,7 @@
             android:maxLines="2"
             android:text="Upgrade your app for a smoother experience"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_size_16" />
 
         <RelativeLayout
             android:id="@+id/updateIcon"
