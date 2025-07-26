@@ -58,10 +58,16 @@ class MainActivity : AppCompatActivity() {
                 if (downloadedBytes < totalBytes) {
                     handler.postDelayed(this, 500)
                 } else {
-                    updateLayoutHelper.showRestartApp {
+                    updateLayoutHelper.showRestartApp(
+                        onRestartClick = {
+                            updateLayoutHelper.hide()
+                        },
+                        restartTextValue = "Restart to complete the update"
+                    )
+                    /*updateLayoutHelper.showRestartApp {
                         updateLayoutHelper.hide()
                         null
-                    }
+                    }*/
                 }
             }
         }, 500)

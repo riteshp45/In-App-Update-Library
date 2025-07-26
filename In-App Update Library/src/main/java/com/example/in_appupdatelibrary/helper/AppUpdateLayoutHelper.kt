@@ -37,10 +37,11 @@ class AppUpdateLayoutHelper(activity: Activity) {
     /**
      * Show the restart UI once update is downloaded and installed.
      */
-    fun showRestartApp(onRestartClick: () -> Unit) {
+    fun showRestartApp(onRestartClick: () -> Unit, restartTextValue: String) {
         updateLayout.visibility = View.VISIBLE
         circularProgressBar.visibility = View.GONE
         restartButton.visibility = View.VISIBLE
+        updateText.text = restartTextValue
         restartButton.setOnClickListener { onRestartClick() }
     }
 
