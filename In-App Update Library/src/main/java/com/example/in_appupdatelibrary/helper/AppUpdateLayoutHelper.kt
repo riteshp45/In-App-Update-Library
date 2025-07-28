@@ -5,14 +5,16 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.example.in_appupdatelibrary.R
 import com.example.inappupdatedownloadingui.circularprogress.CircularProgressBar
 
-class AppUpdateLayoutHelper(activity: Activity) {
+class AppUpdateLayoutHelper(private val activity: Activity) {
 
     private val updateLayout: View = activity.findViewById(R.id.layout_update_bar)
     private val statusContainer: RelativeLayout = updateLayout.findViewById(R.id.updateIcon)
     private val updateText: TextView = updateLayout.findViewById(R.id.updateText)
+    private val buttonText: TextView = updateLayout.findViewById(R.id.button_text)
     private val updateIconImage: ImageView = updateLayout.findViewById(R.id.updateIconImage)
     private val restartButton: RelativeLayout = updateLayout.findViewById(R.id.restart_button)
     private val circularProgressBar: CircularProgressBar =
@@ -56,27 +58,47 @@ class AppUpdateLayoutHelper(activity: Activity) {
      * Dynamically configure appearance of the progress bar.
      * Call this once before using `showDownloading()`.
      */
-    fun configureProgressBar(
-        updateIconResId: Int?,
-        updateTextValue: String,
-        progressColor: Int,
-        backgroundColor: Int,
-        textSize: Float,
-        progressStrokeWidth: Float,
-        backgroundStrokeWidth: Float
+    fun customInAppUpdateLayout(
+        updateIconDrawable: Int? = R.drawable.ic_app_update,
+        downloadingStatusTextValue: String = ContextCompat.getString(activity, R.string.update_available),
+        downloadingStatusTextColor: Int = ContextCompat.getColor(activity, R.color.black),
+        circularProgressBarColor: Int = ContextCompat.getColor(activity, R.color.colorPrimaryOrange),
+        circularProgressBarBackgroundColor: Int= ContextCompat.getColor(activity, R.color.progress_background),
+        circularProgressPercentageCountText: Float = 26f,
+        circularProgressStrokeWidth: Float = 12f,
+        circularProgressBackgroundStrokeWidth: Float = 14f,
+        mainContainerLayoutBackgroundTintColor: Int = ContextCompat.getColor(activity, R.color.background_selected),
+        installButtonBackgroundTintColor: Int = ContextCompat.getColor(activity, R.color.colorPrimaryOrange),
+        installButtonTextValue: String = ContextCompat.getString(activity, R.string.install),
+        installButtonTextColor: Int = ContextCompat.getColor(activity, R.color.white)
     ) {
-        circularProgressBar.setProgressColor(progressColor)
-        circularProgressBar.setBackgroundColorDynamic(backgroundColor)
-        circularProgressBar.setTextSize(textSize)
-        circularProgressBar.setStrokeWidth(backgroundStrokeWidth, progressStrokeWidth)
+        circularProgressBar.setProgressColor(circularProgressBarColor)
+        circularProgressBar.setBackgroundColorDynamic(circularProgressBarBackgroundColor)
+        circularProgressBar.setTextSize(circularProgressPercentageCountText)
+        circularProgressBar.setStrokeWidth(circularProgressBackgroundStrokeWidth, circularProgressStrokeWidth)
 
-        updateText.text = updateTextValue
+        updateText.text = downloadingStatusTextValue
+        updateText.setTextColor(downloadingStatusTextColor)
 
-        updateIconResId?.let {
+        updateIconDrawable?.let {
             updateIconImage.setImageResource(it)
             updateIconImage.visibility = View.VISIBLE
         }
+
+        mainContainerLayoutBackgroundTintColor.let {
+            updateLayout.setBackgroundColor(it)
+        }
+
+        installButtonBackgroundTintColor.let {
+            restartButton.background?.setTint(it)
+        }
+
+        buttonText.let { textView ->
+            installButtonTextValue.let {
+                textView.text = it
+            }
+        }
+        buttonText.setTextColor(installButtonTextColor)
+
     }
-
-
 }

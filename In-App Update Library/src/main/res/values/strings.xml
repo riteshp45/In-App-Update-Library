@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_downloading_state">Update Your App</string>
-    <string name="restart">Restart</string>
+    <string name="update_available">New Update Available!</string>
+    <string name="install">Install</string>
 </resources>

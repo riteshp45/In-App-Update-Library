@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3e569d</color>
-    <color name="colorPrimaryDark">#4c65ae</color>
-    <color name="colorAccent">#6480D1</color>
+    <!--ORANGE-->
+    <color name="colorPrimaryOrange">#F09125</color>
+    <color name="colorPrimaryDarkOrange">#d79446</color>
+    <color name="colorAccentOrange">#D88321</color>
 
-    <color name="background_selected">#E0EEF5</color>
+    <color name="background_selected">#FFECD5</color>
+    <color name="progress_background">#FBD1A0</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
 </resources>

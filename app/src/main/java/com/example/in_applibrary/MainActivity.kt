@@ -1,11 +1,8 @@
 package com.example.in_applibrary
 
-import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -31,14 +28,19 @@ class MainActivity : AppCompatActivity() {
         // Initialize the AppUpdateLayoutHelper first
         appUpdateLayoutHelper = AppUpdateLayoutHelper(this)
 
-        appUpdateLayoutHelper.configureProgressBar(
-            com.example.in_appupdatelibrary.R.drawable.ic_app_update,
-            "Update Available – Don’t Miss Out!",
-            ContextCompat.getColor(this, com.example.in_appupdatelibrary.R.color.colorPrimary),
-            ContextCompat.getColor(this, com.example.in_appupdatelibrary.R.color.colorAccent),
-            26f,
-            12f,
-            14f
+        appUpdateLayoutHelper.customInAppUpdateLayout(
+            updateIconDrawable = com.example.in_appupdatelibrary.R.drawable.ic_app_update,
+            downloadingStatusTextValue = "Update Available – Don’t Miss Out!",
+            downloadingStatusTextColor = ContextCompat.getColor(this, com.example.in_appupdatelibrary.R.color.black),
+            circularProgressBarColor = ContextCompat.getColor(this, com.example.in_appupdatelibrary.R.color.colorPrimaryOrange),
+            circularProgressBarBackgroundColor = ContextCompat.getColor(this, com.example.in_appupdatelibrary.R.color.progress_background),
+            circularProgressPercentageCountText = 26f,
+            circularProgressStrokeWidth = 12f,
+            circularProgressBackgroundStrokeWidth = 14f,
+            mainContainerLayoutBackgroundTintColor = ContextCompat.getColor(this, com.example.in_appupdatelibrary.R.color.background_selected),
+            installButtonBackgroundTintColor = ContextCompat.getColor(this, com.example.in_appupdatelibrary.R.color.colorPrimaryOrange),
+            installButtonTextValue = "Install",
+            installButtonTextColor = ContextCompat.getColor(this, com.example.in_appupdatelibrary.R.color.white),
         )
         // Start the download simulation
         simulateDownloadProgress(appUpdateLayoutHelper)
